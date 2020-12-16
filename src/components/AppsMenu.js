@@ -4,9 +4,8 @@ import {useState} from 'react'
 import Card from './Card'
 import '../App.css'
 
-const MainMenu = ({goToApps}) => {
+const MainMenu = ({goToApps, pause, setPause}) => {
 
-  const [pause, setPause] = useState(true)
   const togglePause = (href) => {
     setPause(!pause);
     window.location = href;

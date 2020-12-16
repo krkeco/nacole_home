@@ -7,12 +7,14 @@ import logo from './react.png'
 
 const App = () => {
   const [page, setPage] = useState(0)
+  const [pause, setPause] = useState(true)
   const goToApps = (page) => {
     setPage(page)
+    setPause(true)
   }
-  let content = <MainMenu goToApps={goToApps}/>
+  let content = <MainMenu  pause={pause} setPause={setPause} goToApps={goToApps}/>
   if(page === 1){
-    content = <AppsMenu goToApps={goToApps}/>
+    content = <AppsMenu pause={pause} setPause={setPause} goToApps={goToApps}/>
   }
   return (<div className='app'>
     <div className='container'>
