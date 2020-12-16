@@ -18,7 +18,7 @@ const MainMenu = ({goToApps, pause, setPause, mobile}) => {
   }
 
   let coord = [
-    23,0,5,10
+    18,2,15,5
   ]
   if(mobile === true){
     coord = [
@@ -40,7 +40,7 @@ const MainMenu = ({goToApps, pause, setPause, mobile}) => {
         bgColor="#bb6"
         onClick={()=>togglePause('http://krkeco-jeopardy.s3-website-us-west-1.amazonaws.com')} 
         name="Jeopardy" 
-        x={`${coord[0]}vw`}
+        x={`${coord[1]}vw`}
         y={'55vh'}/>
       </Animate>
       <Animate play={pause} duration={0.2} start={{ transform: 'scale(0)',marginLeft:'5vw',marginTop:'10vh' }} end={{ opacity: 1,transform: 'scale(1)',margin:0 }} delay={.3}>
@@ -48,7 +48,7 @@ const MainMenu = ({goToApps, pause, setPause, mobile}) => {
         bgColor="#bb6"
         onClick={goAppGo} 
         name="Hmmm..." 
-        x={`${coord[0]}vw`}
+        x={`${coord[2]}vw`}
         y={'65vh'}/>
       </Animate>
       <Animate play={pause} duration={0.2} start={{ transform: 'scale(0)',marginLeft:'8vw',marginTop:'5vh' }} end={{ opacity: 1,transform: 'scale(1)',margin:0 }} delay={.45}>
@@ -56,7 +56,7 @@ const MainMenu = ({goToApps, pause, setPause, mobile}) => {
         bgColor="#bb6"
         onClick={goAppGo}
         small name="Return..." 
-        x={`${coord[0]}vw`}
+        x={`${coord[3]}vw`}
         y={'55vh'}/>
       </Animate>
     </AnimateGroup>
