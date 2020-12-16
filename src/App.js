@@ -24,10 +24,9 @@ const App = () => {
   return (<div className='app'>
     <div className='container'>
       {content}
-      <Animate play duration={10} start={{ opacity: 0}} end={{ opacity: 1}}>
-        <img src={logo} className='logo' alt='logo'/>
-      </Animate>
     </div>
+
+    <img src={logo} className='logo' alt='logo'/>
   </div>)
 };
 export default App;
