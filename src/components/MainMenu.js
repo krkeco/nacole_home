@@ -12,7 +12,7 @@ const MainMenu = ({goToApps, pause, setPause}) => {
   }
   const goAppGo = () =>{
     setPause(!pause);
-    setTimeout(()=>goToApps(1),1000);
+    setTimeout(()=>goToApps(1),800);
   }
     return (
       <AnimateGroup play={pause}>
