@@ -1,5 +1,6 @@
 
 import {useState} from 'react'
+import { Animate } from "react-simple-animate";
 import MainMenu from './components/MainMenu'
 import AppsMenu from './components/AppsMenu'
 import './App.css'
@@ -19,7 +20,9 @@ const App = () => {
   return (<div className='app'>
     <div className='container'>
       {content}
-      <img src={logo} className='logo' alt='logo'/>
+      <Animate play duration={10} start={{ opacity: 0}} end={{ opacity: 1}}>
+        <img src={logo} className='logo' alt='logo'/>
+      </Animate>
     </div>
   </div>)
 };
