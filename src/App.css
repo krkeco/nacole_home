@@ -7,21 +7,22 @@
   height:100vh;
   overflow:hidden;
   display:flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
  
 .logo {
   position:absolute;
-  background-color:red;
-  width:100vh;
+  left:35vw;
+  top:5vw;
+  width:75vh;
   opacity:0.1;
   pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 400s linear;
   }
 }
 
