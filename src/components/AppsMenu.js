@@ -4,7 +4,7 @@ import {useState} from 'react'
 import Card from './Card'
 import '../App.css'
 
-const MainMenu = ({goToApps, pause, setPause}) => {
+const MainMenu = ({goToApps, pause, setPause, mobile}) => {
 
   const togglePause = (href) => {
     setPause(!pause);
@@ -16,38 +16,47 @@ const MainMenu = ({goToApps, pause, setPause}) => {
         goToApps(0)
     },1000);
   }
+
+  let coord = [
+    23,0,5,10
+  ]
+  if(mobile === true){
+    coord = [
+      0,0,0,0
+    ]
+  }
     return (
       <AnimateGroup >
-      <Animate play={pause} duration={0.2} start={{ transform: 'scale(0)',marginLeft:'10vw',marginTop:'5vw' }} end={{ opacity: 1,transform: 'scale(1)',margin:0 }} delay={0}>
+      <Animate play={pause} duration={0.2} start={{ transform: 'scale(0)',marginLeft:'10vw',marginTop:'5vh' }} end={{ opacity: 1,transform: 'scale(1)',margin:0 }} delay={0}>
         <Card
         bgColor="#bb6"
         onClick={()=>togglePause('http://tco.na-cole.com')} 
         name="Callings" 
-        x={'23vw'} 
+        x={`${coord[0]}vw`}
         y={'20vh'}/>
       </Animate>
-      <Animate play={pause} duration={0.2} start={{ transform: 'scale(0)',marginTop:'5vw' }} end={{ opacity: 1,transform: 'scale(1)',margin:0 }} delay={.15}>
+      <Animate play={pause} duration={0.2} start={{ transform: 'scale(0)',marginTop:'5vh' }} end={{ opacity: 1,transform: 'scale(1)',margin:0 }} delay={.15}>
       <Card
         bgColor="#bb6"
         onClick={()=>togglePause('http://krkeco-jeopardy.s3-website-us-west-1.amazonaws.com')} 
         name="Jeopardy" 
-        x={'0'} 
+        x={`${coord[0]}vw`}
         y={'55vh'}/>
       </Animate>
-      <Animate play={pause} duration={0.2} start={{ transform: 'scale(0)',marginLeft:'5vw',marginTop:'10vw' }} end={{ opacity: 1,transform: 'scale(1)',margin:0 }} delay={.3}>
+      <Animate play={pause} duration={0.2} start={{ transform: 'scale(0)',marginLeft:'5vw',marginTop:'10vh' }} end={{ opacity: 1,transform: 'scale(1)',margin:0 }} delay={.3}>
       <Card
         bgColor="#bb6"
         onClick={goAppGo} 
         name="Hmmm..." 
-        x={'5vw'} 
+        x={`${coord[0]}vw`}
         y={'65vh'}/>
       </Animate>
-      <Animate play={pause} duration={0.2} start={{ transform: 'scale(0)',marginLeft:'8vw',marginTop:'5vw' }} end={{ opacity: 1,transform: 'scale(1)',margin:0 }} delay={.45}>
+      <Animate play={pause} duration={0.2} start={{ transform: 'scale(0)',marginLeft:'8vw',marginTop:'5vh' }} end={{ opacity: 1,transform: 'scale(1)',margin:0 }} delay={.45}>
       <Card
         bgColor="#bb6"
         onClick={goAppGo}
         small name="Return..." 
-        x={'10vw'} 
+        x={`${coord[0]}vw`}
         y={'55vh'}/>
       </Animate>
     </AnimateGroup>

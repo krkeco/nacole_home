@@ -6,6 +6,8 @@ import AppsMenu from './components/AppsMenu'
 import './App.css'
 import logo from './react.png'
 
+const {width, height} = window.screen
+
 const App = () => {
   const [page, setPage] = useState(0)
   const [pause, setPause] = useState(true)
@@ -13,9 +15,11 @@ const App = () => {
     setPage(page)
     setPause(true)
   }
-  let content = <MainMenu  pause={pause} setPause={setPause} goToApps={goToApps}/>
+  const mobile = height > width ? true : false;
+
+  let content = <MainMenu mobile={mobile} pause={pause} setPause={setPause} goToApps={goToApps}/>
   if(page === 1){
-    content = <AppsMenu pause={pause} setPause={setPause} goToApps={goToApps}/>
+    content = <AppsMenu mobile={mobile} pause={pause} setPause={setPause} goToApps={goToApps}/>
   }
   return (<div className='app'>
     <div className='container'>
